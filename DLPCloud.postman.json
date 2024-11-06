@@ -1,0 +1,2340 @@
+{
+	"info": {
+		"_postman_id": "053d669f-b939-40c0-bb3b-d8a16c14b7ad",
+		"name": "DLP Cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CloudSOC",
+			"item": [
+				{
+					"name": "API: GET User Information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/usercontrol/?email=alejandro.loza@sasedemo.com",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"usercontrol",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "alejandro.loza@sasedemo.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET User Management - limit=200",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/?limit=200",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Create a User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cell_phone\": \"1-4085551234\",\r\n    \"email\": \"api.john_smith@sasedemo.com\",\r\n    \"first_name\": \"API.John\",\r\n    \"last_name\" : \"Smith\",\r\n    \"is_active\": false,\r\n    \"secondary_user_id\": \"api.john_smith\",\r\n    \"title\": \"Manager\",\r\n    \"work_phone\": \"1-4085556789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Update a User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"API.John\",\r\n    \"work_phone\": \"1-4158025279\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/67193250b00fb89bd406e42d/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								"67193250b00fb89bd406e42d",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Delete a User",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/67193250b00fb89bd406e42d/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								"67193250b00fb89bd406e42d",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Bulk User Management - Create Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"cell_phone\": \"1-4085551234\",\r\n    \"email\": \"api.bob.smith@sasedemo.com\",\r\n    \"first_name\": \"Joe\",\r\n    \"groups\": [\r\n      \"Execs\"],\r\n    \"is_active\": false,\r\n    \"last_name\": \"Smith\",\r\n    \"secondary_user_id\": \"j.smith\",\r\n    \"title\": \"CEO\",\r\n    \"work_phone\": \"1-4085551234\"\r\n  },\r\n  {\r\n    \"cell_phone\": \"1-4085551235\",\r\n    \"email\": \"api.amy.chan@sasedemo.com\",\r\n    \"first_name\": \"Amy\",\r\n    \"groups\": [\r\n      \"Execs\"],\r\n    \"is_active\": false,\r\n    \"last_name\": \"Chan\",\r\n    \"secondary_user_id\": \"a.chan\",\r\n    \"title\": \"Director\",\r\n    \"work_phone\": \"4085551235\"\r\n  },\r\n  {\r\n    \"cell_phone\": \"1-4085551236\",\r\n    \"email\": \"api.dopinder.singh@sasedemo.com\",\r\n    \"first_name\": \"Dopinder\",\r\n    \"groups\": [\r\n      \"RnD\"],\r\n    \"is_active\": false,\r\n    \"last_name\": \"Singh\",\r\n    \"secondary_user_id\": \"d.singh\",\r\n    \"title\": \"Developer\",\r\n    \"work_phone\": \"1-4085551236\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/bulk/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Bulk User Management - Update Users",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"cell_phone\": \"1-4085551234\",\r\n    \"first_name\": \"API.Joe\",\r\n    \"groups\": [\r\n      \"Execs\"],\r\n    \"is_active\": false,\r\n    \"last_name\": \"Smith\",\r\n    \"secondary_user_id\": \"j.smith\",\r\n    \"title\": \"CEO\",\r\n    \"work_phone\": \"1-4085551234\",\r\n    \"resource_uri\": \"/sasedemocom/api/admin/v1/user_management/6719338889e463b7429506ef/\"\r\n  },\r\n  {\r\n    \"cell_phone\": \"1-4085551235\",\r\n    \"first_name\": \"API.Amy\",\r\n    \"groups\": [\r\n      \"Execs\"],\r\n    \"is_active\": false,\r\n    \"last_name\": \"Chan\",\r\n    \"secondary_user_id\": \"a.chan\",\r\n    \"title\": \"Director\",\r\n    \"work_phone\": \"4085551235\",\r\n    \"resource_uri\": \"/sasedemocom/api/admin/v1/user_management/6719338889e463b7429506fb/\"\r\n  },\r\n  {\r\n    \"cell_phone\": \"1-4085551236\",\r\n    \"first_name\": \"API.Dopinder\",\r\n    \"groups\": [\r\n      \"RnD\"],\r\n    \"is_active\": false,\r\n    \"last_name\": \"Singh\",\r\n    \"secondary_user_id\": \"d.singh\",\r\n    \"title\": \"Developer\",\r\n    \"work_phone\": \"1-4085551236\",\r\n    \"resource_uri\": \"/sasedemocom/api/admin/v1/user_management/6719338889e463b742950704/\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/bulk/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Bulk User Management - Delete",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \"/sasedemocom/api/admin/v1/user_management/6719338889e463b7429506ef/\",\r\n    \"/sasedemocom/api/admin/v1/user_management/6719338889e463b7429506fb/\",\r\n    \"/sasedemocom/api/admin/v1/user_management/6719338889e463b742950704/\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/user_management/bulk/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"user_management",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Bulk Group Management - Create Groups",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"description\": \"api.group.1\",\r\n    \"is_active\": true,\r\n    \"name\": \"testgroup_A\",\r\n    \"notes\": \"\",\r\n    \"secondary_group_id\": \"sec_testgroup_A\"\r\n  },\r\n  {\r\n    \"description\": \"api.group.2\",\r\n    \"is_active\": true,\r\n    \"name\": \"testgroup_B\",\r\n    \"notes\": \"\",\r\n    \"secondary_group_id\": \"sec_testgroup_B\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/group_management/bulk/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"group_management",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Bulk Group Management - Update Groups",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"description\": \"updated.api.1\",\r\n    \"is_active\": true,\r\n    \"notes\": \"\",\r\n    \"secondary_group_id\": \"sec_testgroup_A_\",\r\n    \"resource_uri\": \"/sasedemocom/api/admin/v1/group_management/6719359024fa107185b4227e/\"\r\n  },\r\n  {\r\n    \"description\": \"updated.api.2\",\r\n    \"is_active\": true,\r\n    \"notes\": \"\",\r\n    \"secondary_group_id\": \"sec_testgroup_B_\",\r\n    \"resource_uri\": \"/sasedemocom/api/admin/v1/group_management/6719359024fa107185b42281/\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/group_management/bulk/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"group_management",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Bulk Group Management - Delete Groups - Did not test",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default",
+								"disabled": true
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  \"/sasedemocom/api/admin/v1/group_management/6719359024fa107185b4227e/\",\r\n\"/sasedemocom/api/admin/v1/group_management/6719359024fa107185b42281/\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/group_management/bulk/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"group_management",
+								"bulk",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Logs - investigate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/logs/get?created_timestamp=2024-07-01T00%3A00%3A00%2C2024-09-01T00%3A00%3A00&app=investigate&subtype=all&limit=100",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"logs",
+								"get"
+							],
+							"query": [
+								{
+									"key": "created_timestamp",
+									"value": "2024-07-01T00%3A00%3A00%2C2024-09-01T00%3A00%3A00",
+									"description": "For InvestigateInvestigate, the range must be less than 6 months."
+								},
+								{
+									"key": "app",
+									"value": "investigate"
+								},
+								{
+									"key": "subtype",
+									"value": "all"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Logs - detect",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/logs/get?app=detect&subtype=incidents&limit=100&threat_score=10,89",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"logs",
+								"get"
+							],
+							"query": [
+								{
+									"key": "app",
+									"value": "detect"
+								},
+								{
+									"key": "subtype",
+									"value": "incidents"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "threat_score",
+									"value": "10,89"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "*REMOVE API: GET Logs - audit - Fails : Doc https://techdocs.broadcom.com/us/en/symantec-security-software/information-security/symantec-cloudsoc/cloud/api-home/getting-logs.html",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/api/admin/v1/logs/get?app=audit&subtype=threatscore",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"api",
+								"admin",
+								"v1",
+								"logs",
+								"get"
+							],
+							"query": [
+								{
+									"key": "app",
+									"value": "audit"
+								},
+								{
+									"key": "subtype",
+									"value": "threatscore"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Audit Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/data/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Audit Data - tags=untagged",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/data/?tags=untagged",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"data",
+								""
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "untagged"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Audit Data - resource=user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/data/?resource=user",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"data",
+								""
+							],
+							"query": [
+								{
+									"key": "resource",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Audit Data Sources",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/datasources/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"datasources",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Audit Summary Information - resolution daily",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/users/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Audit Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/users/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Audit Usernames",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_ids\":[340, 103],\r\n          \"limit\": 2}"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/usernames/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"usernames",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET All Tags",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/datasources/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"datasources",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET All Tags - tag=Sanctioned",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/tags?tag=Sanctioned",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "Sanctioned"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Create Tag - tag=testCloudSOCAPI",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"tag\":\"testCloudSOCAPI\"\r\n   }"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/tags/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Edit Tag - tag=testCloudSOCAPIEdit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"tag\":\"testCloudSOCAPI\",\r\n   \"updated_tag\":\"testCloudSOCAPIEdit\"\r\n   }"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/tags/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Delete Tag - tag=testCloudSOCAPIEdit",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"tag\":\"testCloudSOCAPIEdit\"\r\n   }"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/tags/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"tags",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Service Lookup - Add Tag Vendor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"service_id_list\": [\"8\",\"15\"],\r\n\"add_tag_list\": [\"Vendor\"]\r\n}"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/serviceannotations/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"serviceannotations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Service Lookup - Remove Tag Vendor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"service_id_list\": [\"8\",\"15\"],\r\n\"remove_tag_list\": [\"Vendor\"]\r\n}"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/serviceannotations/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"serviceannotations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Service Lookup - Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"service_id_list\": [\"8\",\"15\"],\r\n\"comment\": \"API Comment\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/serviceannotations/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"serviceannotations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Service Comments Operation - service_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/servicecomments?service_id=2",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"servicecomments"
+							],
+							"query": [
+								{
+									"key": "service_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: POST Service Comments",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"service_id\": \"2\",\r\n   \"comment\": \"abctestcommentxyzfgh\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/servicecomments/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"servicecomments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Update Service Comments",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"service_id\": \"2\",\r\n   \"comment\": \"abctestcomment\",\r\n   \"updated_comment\": \"updatedtestcomment\"\r\n   }"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/servicecomments/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"servicecomments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: DELETE Service Comments",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"service_id\": \"2\",\r\n   \"comment\": \"abctestcomment\"\r\n}"
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/{{cloudsoc_tenant_name}}/audit/v2/servicecomments/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"{{cloudsoc_tenant_name}}",
+								"audit",
+								"v2",
+								"servicecomments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Protect Policies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Protect Policies - is_active false",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/?api_enabled=true",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								""
+							],
+							"query": [
+								{
+									"key": "api_enabled",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Protect Policies - Data Exposure Using Securlets Policy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/?policy_type=documentshareapi",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								""
+							],
+							"query": [
+								{
+									"key": "policy_type",
+									"value": "documentshareapi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Protect Policies - Policy by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/62dfff8a033174bd0ad80731",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								"62dfff8a033174bd0ad80731"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Protect Policies - Profiles with Securlet Scan Enabled",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/?api_enabled=true",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								""
+							],
+							"query": [
+								{
+									"key": "api_enabled",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET Protect Policies - Profile by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/JSON",
+								"type": "default"
+							},
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/?policy_type=documentshareapi",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								""
+							],
+							"query": [
+								{
+									"key": "policy_type",
+									"value": "documentshareapi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Update API - Only accessenforcement supported",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"policy_name\": \"Alert - Box External Account Activity\",\r\n     \"policy_type\": \"accessenforcement\",\r\n\"users_scope\": {\r\n                \"groups\": [\r\n                    \"__ALL_EL__\"\r\n                ],\r\n                \"users\": [\r\n                    \"__ALL_EL__\"\r\n                ]\r\n            },\r\n            \"users_scope_whitelist\": {\r\n                \"groups\": [],\r\n                \"users\": []\r\n            }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-vip.elastica.net/sasedemocom/api/admin/v1/policies/update/",
+							"protocol": "https",
+							"host": [
+								"api-vip",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"sasedemocom",
+								"api",
+								"admin",
+								"v1",
+								"policies",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cloud DLP",
+			"item": [
+				{
+					"name": "API: Get Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "tenant",
+								"value": "{{clouddlp_tenant_name}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://app.elastica.net/common/token",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"common",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET profiles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{clouddlp_token}}",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/clouddlp/protect/public/profile",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"clouddlp",
+								"protect",
+								"public",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: GET profile history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://app.elastica.net/clouddlp/protect/public/profile/664/history",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"clouddlp",
+								"protect",
+								"public",
+								"profile",
+								"664",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST create profile - Not enough detail in the docs and the example fails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"policy\": \"('''filename_match_rule''' (\\n    document name ['''*.exe,*.bat,*.cat,*.dat,*.dump,*.bak,*.dll,*.com,*.drv,*.class'''] match on attachments component same ex_component same\\n) severity high)\",\r\n\"tenant\": \"{{clouddlp_tenant_name}}\",\r\n\"name\": \"api_clouddlp_example_2\",\r\n\"restConnectorId\": 1,\r\n\"createdBy\": \"sys admin\",\r\n\"createdOn\": \"2024-04-30T06:12:13.968Z\",\r\n\"modifiedBy\": \"sys admin\",\r\n\"modifiedOn\": \"Thu May 11 06:56:27 UTC 2023\"\r\n}     ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/clouddlp/protect/public/profile",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"clouddlp",
+								"protect",
+								"public",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT update profile - Not enough detail in the docs and the example fails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"policy\": \"('''filename_match_rule''' (\\n    document name ['''*.exe,*.xlsx,*.bat,*.cat,*.dat,*.dump,*.bak,*.dll,*.com,*.drv,*.class'''] match on attachments component same ex_component same\\n) severity high)\",\r\n\"tenant\": \"{{clouddlp_tenant_name}}\",\r\n\"name\": \"api_clouddlp_example\",\r\n\"restConnectorId\": 1,\r\n\"createdBy\": \"sys admin\",\r\n\"createdOn\": \"2024-04-30T06:12:13.968Z\",\r\n\"modifiedBy\": \"sys admin\",\r\n\"modifiedOn\": \"Thu May 11 06:56:27 UTC 2023\"\r\n}     ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/clouddlp/protect/public/profile/679",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"clouddlp",
+								"protect",
+								"public",
+								"profile",
+								"679"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Query DLP Incidents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "tenant",
+								"value": "symanteccom",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "https://app.elastica.net/api/clouddlp/v1/incidents",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"api",
+								"clouddlp",
+								"v1",
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Query DLP Incidents - Severity High",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "tenant",
+								"value": "symanteccom",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filters\": [\r\n    {\r\n      \"name\": \"severityValue\",\r\n      \"operator\": \"equals\",\r\n      \"values\": 1\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/api/clouddlp/v1/incidents",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"api",
+								"clouddlp",
+								"v1",
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Query DLP Incidents - Status New",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "tenant",
+								"value": "symanteccom",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filters\": [\r\n    {\r\n      \"name\": \"statusValue\",\r\n      \"operator\": \"equals\",\r\n      \"values\": \"new\"\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/api/clouddlp/v1/incidents",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"api",
+								"clouddlp",
+								"v1",
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Query DLP Incidents - Incident Type ICAP SMTP CASB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "tenant",
+								"value": "symanteccom",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"filters\": [\r\n    {\r\n      \"name\": \"monitorChannelType\",\r\n      \"operator\": \"in\",\r\n      \"values\": [\"REST_INDUCTION\", \"INLINE_SMTP\", \"ICAP\"]\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/api/clouddlp/v1/incidents",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"api",
+								"clouddlp",
+								"v1",
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API: Update DLP Incidents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{clouddlp_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Elastica-Dbname-Resolved",
+								"value": "True",
+								"type": "default"
+							},
+							{
+								"key": "tenant",
+								"value": "symanteccom",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"requestId\": \"myUpdate-UniqueID\",\r\n  \"incidentIds\": [10361],\r\n  \"severity\": \"medium\",\r\n  \"incidentNotes\": [\r\n    {\r\n      \"note\": \"Broken business process: division transferring restricted data.\"\r\n    },\r\n    {\r\n      \"note\": \"Escalated to InfoSec\"\r\n    }\r\n  ],\r\n  \"incidentStatusValue\": \"escalated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://app.elastica.net/api/clouddlp/v1/incidents",
+							"protocol": "https",
+							"host": [
+								"app",
+								"elastica",
+								"net"
+							],
+							"path": [
+								"api",
+								"clouddlp",
+								"v1",
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "cloudsoc_tenant_name",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "clouddlp_tenant_name",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "clouddlp_token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
